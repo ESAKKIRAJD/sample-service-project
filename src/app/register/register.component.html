@@ -1,0 +1,91 @@
+<div class="login-page">
+    <div class="page-header header-filter">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+              <div class="card card-signup">
+                <form class="form" method="" action=""  #registerForm="ngForm" (ngSubmit)='onRegister(registerForm.value)'   novalidate>
+                  <h2 class="card-title text-center">Register</h2>
+                  <div class="card-content">
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <i class="material-icons">face</i>
+                      </span>
+                      <div class="form-group is-empty">
+                        <input type="text" class="form-control" placeholder="User Name..." name="username" #Username="ngModel" minlength="4" required  ngModel>
+                        <div *ngIf="Username.errors && (Username.touched|| Username.dirty)" class="alert text-danger">
+                            <div [hidden]="!Username.errors.required">
+                                Please fill this
+                              </div>
+                              <div [hidden]="!Username.errors.minlength">
+                                  Please fill 4 char
+                              </div>                              
+                        </div>
+                        <span class="material-input"></span>
+                      </div>
+                    </div>
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <i class="material-icons">email</i>
+                      </span>
+                      <div class="form-group is-empty">
+                        <input type="text" class="form-control" placeholder="Email..." name="email"#Email="ngModel"  minlength="8" required ngModel>
+                        <div *ngIf="Email.errors && (Email.touched|| Email.dirty)" class="alert text-danger">
+                            <div [hidden]="!Email.errors.required">
+                                Please fill this
+                              </div>
+                              <div [hidden]="!Email.errors.minlength">
+                                  Please fill 8 char
+                              </div>                              
+                        </div>
+                        <span class="material-input"></span>
+                      </div>
+                    </div>
+    
+                    <div class="input-group">
+                      <span class="input-group-addon">
+                        <i class="material-icons">lock_outline</i>
+                      </span>
+                      <div class="form-group is-empty">
+                        <input type="password" placeholder="Password..." class="form-control" name="password" #Password="ngModel" minlength="8" required  ngModel>
+                        <div *ngIf="Password.errors && (Password.touched|| Password.dirty)" class="alert text-danger">
+                            <div [hidden]="!Password.errors.required">
+                                Please fill this
+                              </div>
+                              <div [hidden]="!Password.errors.minlength">
+                                Please fill 6 char
+                              </div>
+                        </div>
+                        <span class="material-input"></span>
+                      </div>
+                    </div>
+                    <div class="checkbox">
+                          <label>
+                            <input type="checkbox" name="optionsCheckboxes" checked=""><span class="checkbox-material">
+                            </span>
+                            I agree to the <a href="#something">terms and conditions</a>.
+                          </label>
+                    </div>
+                  </div>
+                  <div class="footer text-center ">
+                      <a routerLink="/login">
+                        <button class="btn btn-primary btn-round" [disabled]="!registerForm.form.valid" type="submit" data-toggle="modal" data-target="#loginModal">
+                            Register</button>                       
+                    </a>
+               
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="footer">
+                  <div class="container">
+                      <div class="copyright pull-center">
+                          © <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com" target="_blank">Triodesk</a>
+                      </div>
+                  </div>
+        </footer>
+        
+      </div>
+</div>
