@@ -12,12 +12,13 @@
                     <i class="material-icons">email</i>
                   </span>
                   <div class="form-group is-empty">
-                    <input type="email" class="form-control" placeholder="Email..." name="email" #Email="ngModel"  minlength="8" required ngModel>
+                    <input type="email" class="form-control" placeholder="Email..." name="email" #Email="ngModel"  
+                  pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required ngModel>
                     <div *ngIf="Email.errors && (Email.touched|| Email.dirty)" class="alert text-danger">
                         <div [hidden]="!Email.errors.required">
                             required valid email
                           </div>
-                          <div [hidden]="!Email.errors.minlength">
+                          <div [hidden]="!Email.errors.pattern">
                               Please fill 8 char
                             </div>
                           
