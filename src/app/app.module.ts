@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule, Routes } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
@@ -11,6 +12,10 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
+
+//service
+
+import {DataServiceService}from'./data-service.service';
 
 
 @NgModule({
@@ -36,7 +41,7 @@ import { RegisterComponent } from './register/register.component';
 
     ])
   ],
-  providers: [],
+  providers: [DataServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
