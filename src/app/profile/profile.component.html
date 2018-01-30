@@ -58,7 +58,7 @@
                       <input type="text" class="form-control" placeholder="New User Name..."  name="Newusername" #Newusername="ngModel" minlength="4" required  ngModel>
                       <div *ngIf="Newusername.errors && (Newusername.touched|| Newusername.dirty)" class="alert text-danger">
                           <div [hidden]="!Newusername.errors.required">
-                              Please fill this
+                              required valid new username
                             </div>
                             <div [hidden]="!Newusername.errors.minlength">
                                 Please fill 4 char
@@ -75,7 +75,7 @@
                       <input type="password" placeholder="New Password..." class="form-control" name="NewPassword" #NewPassword="ngModel" minlength="8" required  ngModel>
                       <div *ngIf="NewPassword.errors && (NewPassword.touched|| NewPassword.dirty)" class="alert text-danger">
                           <div [hidden]="!NewPassword.errors.required">
-                              Please fill this
+                              required valid new Password
                             </div>
                             <div [hidden]="!NewPassword.errors.minlength">
                               Please fill 6 char
