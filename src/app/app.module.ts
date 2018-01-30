@@ -16,6 +16,7 @@ import { RegisterComponent } from './register/register.component';
 //service
 
 import {DataServiceService}from'./data-service.service';
+import { TermsComponent } from './terms/terms.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import {DataServiceService}from'./data-service.service';
     DashboardComponent,
     ProfileComponent,
     RegisterComponent,
+    TermsComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +40,7 @@ import {DataServiceService}from'./data-service.service';
       { path:'dashboard',component:DashboardComponent },
       { path:'profile',component:ProfileComponent },
       { path:'register',component:RegisterComponent },
+      { path:'terms',component:TermsComponent },
 
     ])
   ],
