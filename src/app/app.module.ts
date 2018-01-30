@@ -16,6 +16,7 @@ import { RegisterComponent } from './register/register.component';
 //service
 
 import {DataServiceService}from'./data-service.service';
+import {ShareService} from './share.service';
 
 
 
