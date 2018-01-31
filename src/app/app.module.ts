@@ -19,7 +19,6 @@ import {DataServiceService}from'./data-service.service';
 import {ShareService} from './share.service';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,6 +40,7 @@ import {ShareService} from './share.service';
       { path:'dashboard',component:DashboardComponent },
       { path:'profile',component:ProfileComponent },
       { path:'register',component:RegisterComponent },
+      
     
 
     ])

@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Http,Response } from '@angular/http';
+import { Validators } from '@angular/forms';
+
+import {DataServiceService} from '../data-service.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +12,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
-
+  constructor( private profileService:DataServiceService,private router:Router) { }
+  user=[];
   ngOnInit() {
   }
+  onProfile(value){
+    console.log(value)
+    this.profileService.onProfile(value).subscribe(res=>{
+     console.log(res);
+       this.user=res;
+       this.router.navigate(['/dashboard']);
+     });
+      }
 
 }
