@@ -18,11 +18,11 @@ export class ForgotPasswordComponent implements OnInit {
   }
   onForgot(value){
 console.log(value)
-// this.forgotService.onForgot(value).subscribe(res=>{
-//   console.log(res);
-//   this.user=res;
-//   this.router.navigate(['/login']);
-// });
+ this.forgotService.onForgot(value).subscribe(res=>{
+   console.log(res);
+   this.user=res;
+   this.router.navigate(['/login']);
+ });
   }
 
 }
