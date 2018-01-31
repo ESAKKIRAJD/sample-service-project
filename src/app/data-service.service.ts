@@ -15,7 +15,7 @@ export class DataServiceService {
       return this.http.post('http://localhost:4000/register',value)
       .map(result => this.newUser = result.json())
   }
-  onLogin(value){
+   onLogin(value){
     console.log(value);
     return this.http.post('http://localhost:4000/findmatch',value)
     .map(result =>this.loginUser=result.json())

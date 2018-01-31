@@ -45,7 +45,9 @@ import {ShareService} from './share.service';
 
     ])
   ],
-  providers: [DataServiceService],
+  providers: [DataServiceService,
+              ShareService
+             ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -9,7 +9,6 @@ import {LoginComponent} from '../login/login.component';
 })
 export class DashboardComponent implements OnInit {
   
-  url="http://localhost:4000/findmatch";
 
   constructor() { }
 
