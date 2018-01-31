@@ -17,7 +17,6 @@ export class ForgotPasswordComponent implements OnInit {
   ngOnInit() {
   }
   onForgot(value){
-console.log(value)
  this.forgotService.onForgot(value).subscribe(res=>{
    console.log(res);
    this.user=res;
