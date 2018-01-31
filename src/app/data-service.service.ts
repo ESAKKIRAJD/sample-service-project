@@ -5,13 +5,19 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class DataServiceService {
 
-  Result:any;
+  newUser:any;
+  loginUser:any;
 
   constructor(private http:Http) {}
 
   onRegister(value){
-    console.log(value);
+    console.log(value)
       return this.http.post('http://localhost:4000/register',value)
-      .map(result => this.Result = result.json())
+      .map(result => this.newUser = result.json())
+  }
+  onLogin(value){
+    console.log(value);
+    return this.http.post('http://localhost:4000/findmatch',value)
+    .map(result =>this.loginUser=result.json())
   }
 }
