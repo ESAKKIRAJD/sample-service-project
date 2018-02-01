@@ -74,7 +74,7 @@
                     </span>
                     <div class="form-group label-floating is-empty">
                         <label class="control-label"> Password</label>
-                      <input type="password"  class="form-control" name="Password" #Password="ngModel" minlength="8" required  ngModel>
+                      <input type="password"  class="form-control" name="Password" #Password="ngModel" minlength="6" required  ngModel>
                       <div *ngIf="Password.errors && (Password.touched|| Password.dirty)" class="alert text-danger">
                           <div [hidden]="!Password.errors.required">
                               required valid  Password
