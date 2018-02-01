@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+
+
+import {DataServiceService} from '../data-service.service';
 
 import {LoginComponent} from '../login/login.component';
 
@@ -10,8 +15,11 @@ import {LoginComponent} from '../login/login.component';
 export class DashboardComponent implements OnInit {
   
 
-  constructor() { }
-
-  ngOnInit() {}
+  constructor( private profiledetails:DataServiceService,private router:Router) { }
+  userdetails=[];
+  ngOnInit() {
+    this.profiledetails.getUserprofiledetails()
+    .subscribe(resProfiles=>this.userdetails=resProfiles)
+  }
 
 }

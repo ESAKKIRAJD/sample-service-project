@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
+import{Response} from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -9,6 +10,7 @@ export class DataServiceService {
   loginUser:any;
    forgotUser:any;
    profileUser:any;
+   
 
 
   constructor(private http:Http) {}
@@ -34,4 +36,10 @@ export class DataServiceService {
      return this.http.post('http://localhost:4000/updateprofile',value)
      .map(result =>this.profileUser=result.json())
   }
+getUserprofiledetails(){
+  return this.http.get('http://localhost:4000/dashbord')
+  .map((userdetails:Response)=>userdetails.json())
+}
+
+
 }
