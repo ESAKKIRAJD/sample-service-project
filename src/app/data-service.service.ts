@@ -10,6 +10,7 @@ export class DataServiceService {
   loginUser:any;
    forgotUser:any;
    profileUser:any;
+   dashborddetails:any;
    
 
 
@@ -21,7 +22,7 @@ export class DataServiceService {
       .map(result => this.newUser = result.json())
   }
    onLogin(value){
-    console.log(value);
+    // console.log(value);
     return this.http.post('http://localhost:4000/findmatch',value)
     .map(result =>this.loginUser=result.json())
   }
@@ -36,9 +37,9 @@ export class DataServiceService {
      return this.http.post('http://localhost:4000/updateprofile',value)
      .map(result =>this.profileUser=result.json())
   }
-getUserprofiledetails(){
+  getDashbord(){
   return this.http.get('http://localhost:4000/dashbord')
-  .map((userdetails:Response)=>userdetails.json())
+  .map((dashborddetails:Response)=>dashborddetails.json())
 }
 
 

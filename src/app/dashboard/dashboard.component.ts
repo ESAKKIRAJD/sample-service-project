@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 
 import {DataServiceService} from '../data-service.service';
 
-import {LoginComponent} from '../login/login.component';
+import {ShareService} from '../share.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,11 +15,20 @@ import {LoginComponent} from '../login/login.component';
 export class DashboardComponent implements OnInit {
   
 
-  constructor( private profiledetails:DataServiceService,private router:Router) { }
-  userdetails=[];
+  constructor( private dashbordservice:DataServiceService,
+                private profileService:ShareService ) { }
+  dashbordDetail=[];
   ngOnInit() {
-    this.profiledetails.getUserprofiledetails()
-    .subscribe(resProfiles=>this.userdetails=resProfiles)
+    this.dashbordservice.getDashbord()
+    .subscribe(resDashbord=>{
+      // console.log(resDashbord);
+      this.dashbordDetail=resDashbord;
+    });
+    // this.profileService.getUser().subscribe(res=>{
+    //   console.log(res);
+    })
+    
   }
+
 
 }
