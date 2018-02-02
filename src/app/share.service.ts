@@ -12,6 +12,7 @@ export class ShareService {
 
   setUser(value){
     this.user=value;
+    console.log(value);
   }
   getUser(){
     return this.user;

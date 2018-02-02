@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import {DataServiceService} from '../data-service.service';
 
 import {ShareService} from '../share.service';
+import { send } from 'q';
 
 @Component({
   selector: 'app-login',
@@ -15,18 +16,25 @@ export class LoginComponent implements OnInit {
 
   user=[];
 
-  constructor( private loginService:DataServiceService,private router:Router,
-  private shareservice:ShareService) { }
+  public data=this.user
 
-  ngOnInit() {
-  }
+  constructor( private loginService:DataServiceService,private router:Router,
+  private shareservice:ShareService) {
+   
+   }
+
+  ngOnInit() {}
+
   onLogin(value){
      this.loginService.onLogin(value).subscribe(res=>{
        console.log(res);
        this.user=res;
        this.router.navigate(['/dashboard']);
+       this.shareservice.setUser(res);
+      
      });
+
+     }
     
-  }
 
 }

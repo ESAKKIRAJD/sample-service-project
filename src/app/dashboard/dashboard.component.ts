@@ -14,10 +14,16 @@ import {ShareService} from '../share.service';
 })
 export class DashboardComponent implements OnInit {
   
+  dashbordDetail=[];
+  user=[];
+
 
   constructor( private dashbordservice:DataServiceService,
-                private profileService:ShareService ) { }
-  dashbordDetail=[];
+                private profileService:ShareService ) {
+                  this.user=this.profileService.getUser();
+                  console.log(this.user);
+                 }
+  
   ngOnInit() {
     this.dashbordservice.getDashbord()
     .subscribe(resDashbord=>{
@@ -26,7 +32,7 @@ export class DashboardComponent implements OnInit {
     });
     // this.profileService.getUser().subscribe(res=>{
     //   console.log(res);
-    })
+    // })
     
   }
 
