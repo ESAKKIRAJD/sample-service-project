@@ -4,6 +4,7 @@ import { Http,Response } from '@angular/http';
 import { Validators } from '@angular/forms';
 
 import {DataServiceService} from '../data-service.service';
+import{ShareService} from '../share.service';
 
 @Component({
   selector: 'app-profile',
@@ -11,9 +12,15 @@ import {DataServiceService} from '../data-service.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
-  constructor( private profileService:DataServiceService,private router:Router) { }
   user=[];
+  user_details=[];
+  constructor( private profileService:DataServiceService,
+               private router:Router,
+               private shareservice:ShareService) { 
+                this.user_details=this.shareservice.getUser();
+                console.log(this.user);
+               }
+  
   ngOnInit() {
   }
   onProfile(value){

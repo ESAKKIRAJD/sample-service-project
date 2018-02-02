@@ -16,7 +16,6 @@ export class LoginComponent implements OnInit {
 
   user=[];
 
-  public data=this.user
 
   constructor( private loginService:DataServiceService,private router:Router,
   private shareservice:ShareService) {
@@ -26,9 +25,11 @@ export class LoginComponent implements OnInit {
   ngOnInit() {}
 
   onLogin(value){
+
      this.loginService.onLogin(value).subscribe(res=>{
-       console.log(res);
        this.user=res;
+       console.log(this.user);
+
        this.router.navigate(['/dashboard']);
        this.shareservice.setUser(res);
       

@@ -13,8 +13,8 @@
                       <i class="material-icons">face</i>
                     </span>
                     <div class="form-group label-floating is-empty">
-                      <label class="control-label"> UserName</label>
-                      <input type="text" class="form-control"  name="username" #username="ngModel" minlength="4" required  ngModel>
+                      <label class="control-label upper-case"></label>
+                      <input type="text" class="form-control"  name="username" placeholder="{{user_details.username}}" #username="ngModel" minlength="4" required  ngModel >
                       <div *ngIf="username.errors && (username.touched|| username.dirty)" class="alert text-danger">
                           <div [hidden]="!username.errors.required">
                               required valid  username
@@ -26,13 +26,22 @@
                       <span class="material-input"></span>
                     </div>
                   </div>
+                  
+                  
                   <div class="input-group">
+                    <span class="input-group-addon">
+                      <i class="material-icons">mail_outline</i>
+                    </span>
+                  <h5>{{user_details.email}}</h5>
+                  </div>
+                  
+                  <!-- <div class="input-group">
                     <span class="input-group-addon">
                       <i class="material-icons">lock_outline</i>
                     </span>
                     <div class="form-group label-floating is-empty">
                         <label class="control-label"> Password</label>
-                      <input type="password"  class="form-control" name="Password" #Password="ngModel" minlength="6" required  ngModel>
+                      <input type="password"  class="form-control" name="Password" value="jjjjjj" #Password="ngModel" minlength="6" readonly ngModel>
                       <div *ngIf="Password.errors && (Password.touched|| Password.dirty)" class="alert text-danger">
                           <div [hidden]="!Password.errors.required">
                               required valid  Password
@@ -43,7 +52,7 @@
                       </div>
                       <span class="material-input"></span>
                     </div>
-                  </div>
+                  </div> -->
                 </div>
                 <div class="footer text-center">                    
                     <button class="btn btn-primary btn-round" [disabled]="!profileForm.form.valid" type="submit" data-toggle="modal" data-target="#loginModal">
