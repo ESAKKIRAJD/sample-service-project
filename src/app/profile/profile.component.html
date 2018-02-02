@@ -1,47 +1,5 @@
 <div class="login-page">
-    <nav class="navbar navbar-primary navbar-transparent navbar-absolute">
-        <div class="container">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-              </button>
-              <a href="#pablo" class="profile-photo dropdown-toggle" data-toggle="dropdown">
-                    <div class="profile-photo-small">
-                        <img src="assets/img/logo.png" alt="Circle Image" class="img img-responsive">
-                    </div>
-                    <div class="ripple-container"></div>
-                </a>
-    
-            </div>
-    
-            <div class="collpase navbar-collapse">
-              <ul class="nav navbar-nav navbar-right">  			
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  User Name
-                  <b class="caret"></b>
-                </a>
-                <ul class="dropdown-menu dropdown-with-icons">
-                    <li>
-                        <a routerLink="/profile" class="btn btn-primary btn-simple btn-wd btn-lg">
-                          Change Profile
-                      </a>
-                    </li>
-                    <li>
-                        <a routerLink="/login" class="btn btn-primary btn-simple btn-wd btn-lg">
-                          Logout
-                      </a>
-                    </li>
-                     </ul>
-              </li>
-              </ul>
-            </div>
-        </div>
-      </nav>
+    <app-navbar></app-navbar>
     <div class="page-header header-filter">
       <div class="container">
         <div class="row">
@@ -89,21 +47,24 @@
                 </div>
                 <div class="footer text-center">                    
                     <button class="btn btn-primary btn-round" [disabled]="!profileForm.form.valid" type="submit" data-toggle="modal" data-target="#loginModal">
-                        Submit</button>                   
+                        Submit</button>
+                        <a routerLink="/dashboard"  class="btn btn-primary btn-round ">
+                          Cancel
+                        </a>                   
                 </div>
               </form>								
             </div>						
           </div>
         </div>
       </div>
-        <footer class="footer">
+      <footer class="footer">
                 <div class="container">
                     <div class="copyright pull-center">
                         © <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com" target="_blank">Triodesk</a>
                     </div>
                 </div>
-        </footer>
-    </div>
+      </footer>
+    </div>  
 </div>
 
 

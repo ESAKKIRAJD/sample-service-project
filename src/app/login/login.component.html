@@ -16,7 +16,7 @@
                   pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required ngModel>
                     <div *ngIf="Email.errors && (Email.touched|| Email.dirty)" class="alert text-danger">
                         <div [hidden]="!Email.errors.required">
-                            required email
+                            required valid email
                           </div>
                           <div [hidden]="!Email.errors.pattern">
                               Please enter valid email

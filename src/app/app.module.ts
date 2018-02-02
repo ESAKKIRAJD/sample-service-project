@@ -17,6 +17,7 @@ import { RegisterComponent } from './register/register.component';
 
 import {DataServiceService}from'./data-service.service';
 import {ShareService} from './share.service';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import {ShareService} from './share.service';
     DashboardComponent,
     ProfileComponent,
     RegisterComponent,
+    NavbarComponent,
 
   ],
   imports: [
